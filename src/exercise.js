@@ -56,4 +56,4 @@ const unsubscribe = store.subscribe(listener);
 store.dispatch(increase());
 store.dispatch(decrease());
 store.dispatch(changeText("Hello"));
-store.dispatch(addToList());
+store.dispatch(addToList({ id: 1, text: "wow" }));
