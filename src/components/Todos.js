@@ -22,4 +22,20 @@ const TodoList = React.memo(function TodoList({ todos, onToggle }) {
 });
 function Todos({ todos, onCreate, onToggle }) {
   const [text, setText] = useState("");
+  const onChange = (e) => setText(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onCreate(text);
+    setText("");
+  };
+  return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input value={text} placeholder="Input the to do" onChange={onChange} />
+        <button>Register</button>
+      </form>
+      <TodoList todos={todos} onToggle={onToggle} />
+    </div>
+  );
 }
+export default Todos;
