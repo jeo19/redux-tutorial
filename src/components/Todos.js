@@ -20,6 +20,7 @@ const TodoList = React.memo(function TodoList({ todos, onToggle }) {
     </ul>
   );
 });
+
 function Todos({ todos, onCreate, onToggle }) {
   const [text, setText] = useState("");
   const onChange = (e) => setText(e.target.value);
@@ -32,7 +33,7 @@ function Todos({ todos, onCreate, onToggle }) {
     <div>
       <form onSubmit={onSubmit}>
         <input value={text} placeholder="Input the to do" onChange={onChange} />
-        <button>Register</button>
+        <button type="submit">Register</button>
       </form>
       <TodoList todos={todos} onToggle={onToggle} />
     </div>

@@ -4,16 +4,12 @@ const TOGGLE_TODO = "todos/TOGGLE_TODO";
 let nextId = 1;
 export const addTodo = (text) => ({
   type: ADD_TODO,
-  todo: { id: nextId++, text },
+  todo: { id: ++nextId, text },
 });
 
 export const toggleTodo = (id) => ({ type: TOGGLE_TODO, id });
 
-const initialState = {
-  id: 1,
-  text: "example",
-  done: false,
-};
+const initialState = [{ id: 1, text: "example", done: false }];
 
 export default function todos(state = initialState, action) {
   switch (action.type) {
